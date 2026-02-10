@@ -28,9 +28,48 @@
         <button id="toggle-btn">Toggle First Paragraph</button>
     </div>
 
-    <script defer>
-        // JavaScript will go here
-    </script>
+   <script defer>
+    // Select paragraphs
+    const paragraphs = document.querySelectorAll(".paragraph");
+    const firstParagraph = document.querySelector(".paragraph");
+
+    if (paragraphs.length === 0) {
+        console.error("No paragraphs found");
+    }
+
+    if (!firstParagraph) {
+        console.error("First paragraph not found");
+    }
+
+    // Select buttons
+    const highlightBtn = document.getElementById("highlight-btn");
+    const clearBtn = document.getElementById("clear-btn");
+    const toggleBtn = document.getElementById("toggle-btn");
+
+    if (!highlightBtn || !clearBtn || !toggleBtn) {
+        console.error("One or more buttons not found");
+    }
+
+    // Highlight all paragraphs
+    highlightBtn.addEventListener("click", () => {
+        paragraphs.forEach(p => {
+            p.classList.add("highlight");
+        });
+    });
+
+    // Clear highlights
+    clearBtn.addEventListener("click", () => {
+        paragraphs.forEach(p => {
+            p.classList.remove("highlight");
+        });
+    });
+
+    // Toggle first paragraph only
+    toggleBtn.addEventListener("click", () => {
+        firstParagraph.classList.toggle("highlight");
+    });
+</script>
+
 
 </body>
 </html>
