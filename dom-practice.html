@@ -23,8 +23,34 @@
 
     <!-- JavaScript -->
     <script defer>
-        // JavaScript will go here
-    </script>
+
+    // Select title using getElementById
+    const title = document.getElementById("title");
+
+    if (!title) {
+        console.error("Title element not found");
+    } else {
+        console.log("Title:", title);
+    }
+
+    // Select first paragraph using querySelector
+    const firstParagraph = document.querySelector(".info");
+
+    if (!firstParagraph) {
+        console.error("Paragraph with class 'info' not found");
+    } else {
+        console.log("First paragraph:", firstParagraph);
+    }
+
+    // Select all buttons with class 'action-btn'
+    const actionButtons = document.querySelectorAll(".action-btn");
+
+    if (actionButtons.length === 0) {
+        console.error("No action buttons found");
+    } else {
+        console.log("Action buttons:", actionButtons);
+    }
+</script>
 
 </body>
 </html>
